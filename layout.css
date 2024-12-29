@@ -1,0 +1,80 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+}
+
+@media only screen and (max-width: 599px) {
+  #root {
+    grid-template-columns: 1fr; 
+  }
+
+  main.card {
+    grid-template-columns: 100%;
+  }
+
+  nav.rail {
+    display: none
+  }
+
+  nav.sub-nav {
+    display: none	
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+  #root {
+    grid-template-columns: 80px 1fr; 
+  }
+
+  main.card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  aside {
+    display: none
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  #root {
+    grid-template-columns: 80px 1fr; 
+  }
+
+  main.card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  aside {
+    display: none
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #root {
+    grid-template-columns: 80px 1fr 200px; 
+  }
+
+  main.card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+main.card {
+  display: grid;
+  padding: 24px;
+  gap: 24px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+main.master-detail {
+  display: grid;
+  grid-template-columns: 33% 66%;
+}
